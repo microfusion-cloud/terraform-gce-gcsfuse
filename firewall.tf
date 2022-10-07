@@ -49,4 +49,17 @@ resource "google_compute_firewall" "gcp-allow-ssh" {
   ]
 }
 
+resource "google_compute_firewall" "gcp-allow-httpd" {
+  name    = "${google_compute_network.gcp-network.name}-allow-httpd"
+  network = google_compute_network.gcp-network.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["80"]
+  }
+
+  source_ranges = [
+    "0.0.0.0/0",
+  ]
+}
 

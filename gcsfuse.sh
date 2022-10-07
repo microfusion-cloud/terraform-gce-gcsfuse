@@ -9,6 +9,6 @@ sudo apt-get install gcsfuse
 
 sudo mkdir $MOUNT_DIR
 
-sudo gcsfuse \
+sudo gcsfuse --implicit-dirs \
   $(gcloud compute instances describe $HOSTNAME --zone asia-east1-a --format='value[](metadata.items.mount_bucket_name)') \
   $MOUNT_DIR
