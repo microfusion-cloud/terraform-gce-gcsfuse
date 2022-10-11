@@ -23,8 +23,8 @@
 #   type        = string
 # }
 
-variable "prefix_sa_name" {
-  description = "MF SA Name."
+variable "prefix_name" {
+  description = "Resource prefix name."
   type = string
 }
 

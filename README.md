@@ -2,7 +2,7 @@
 # GCS + GCE with gcsfuse
 
 1. create .tfvars
-  - prefix_sa_name
+  - prefix_name
   - gcp_project_id
 
 

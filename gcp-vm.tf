@@ -33,12 +33,12 @@ output "default_account" {
 }
 
 resource "google_compute_address" "gcp-ip" {
-  name   = "${var.prefix_sa_name}-gce-ip-${var.gcp_region}-1"
+  name   = "${var.prefix_name}-gce-ip-${var.gcp_region}-1"
   region = var.gcp_region
 }
 
 resource "google_compute_instance" "gcp-vm1" {
-  name         = "${var.prefix_sa_name}-vm-${var.gcp_region}"
+  name         = "${var.prefix_name}-vm-${var.gcp_region}"
   machine_type = var.gcp_instance_type
   zone         = data.google_compute_zones.available.names[0]
 

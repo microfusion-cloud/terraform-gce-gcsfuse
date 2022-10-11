@@ -19,12 +19,12 @@
  */
 
 resource "google_compute_network" "gcp-network" {
-  name                    = "${var.prefix_sa_name}-network"
+  name                    = "${var.prefix_name}-network"
   auto_create_subnetworks = "false"
 }
 
 resource "google_compute_subnetwork" "gcp-subnet1" {
-  name          = "${var.prefix_sa_name}-subnet1"
+  name          = "${var.prefix_name}-subnet1"
   ip_cidr_range = var.gcp_subnet1_cidr
   network       = google_compute_network.gcp-network.name
   region        = var.gcp_region
